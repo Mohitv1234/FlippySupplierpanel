@@ -304,16 +304,7 @@ export default function Sidebar() {
             <Route path="/setting" element={<Setting />}/> 
 
             {/* anand */}
-            <Route path="/login" element={<Login />} />
-          <Route path="/forgotepass" element={<ForgotePass />} />
-          <Route path="/verifyemail" element={<Verify />} />
-          <Route path="/resetpass" element={<ResetPass />} />
-          <Route path="/resetpasssuccess" element={<ResetPassSuccess />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/gstin" element={<GstIn />} />
-          <Route path="/bankdetails" element={<Bankdetails />} />
-          <Route path="/address" element={<Address />} />
-          <Route path="/submitform" element={<Submitform />} />
+            
           <Route path="/products/bulk_upload" element={<Bulk/>} />
           <Route path="/Rtomanage" element={<Rto_manage/>} />
 
