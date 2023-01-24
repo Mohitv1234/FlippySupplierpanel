@@ -14,6 +14,7 @@ const adminRoutes = require("./routes/adminRoutes/adminRoutes")
 const sellerRoutes = require("./routes/sellerRoutes/sellerRoutes")
 const productAdminRoutes = require("./routes/adminRoutes/productRoutes")
 const productSellerRoutes = require("./routes/sellerRoutes/productRoutes")
+const couponSellerRoutes = require("./routes/sellerRoutes/couponRoutes")
 
 
 
@@ -32,6 +33,7 @@ app.use("/api/flippy/v1/",adminRoutes)
 app.use("/api/flippy/v1/",sellerRoutes)
 app.use("/api/flippy/v1/",productAdminRoutes)
 app.use("/api/flippy/v1/",productSellerRoutes) 
+app.use("/api/flippy/v1/",couponSellerRoutes) 
 app.use("/api/flippy/v1/",categoryRoutes)
 app.use("/api/flippy/v1/",attributeRoutes)
 

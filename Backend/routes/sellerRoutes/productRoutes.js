@@ -1,6 +1,6 @@
 const express = require("express")
 const { createProductBySeller, updateProductBySeller, getAllProductsBySeller, deleteProductBySeller, getSingleProductBySeller } = require("../../controller/sellerController/productController")
-const {isAuthenticatedUser, authorizeRoles, isAuthenticatedSeller} =require("../../middleware/auth")
+const {isAuthenticatedSeller} =require("../../middleware/auth")
 const Router = express.Router()
 
 

@@ -2,11 +2,17 @@ import { legacy_createStore as createStore ,combineReducers, applyMiddleware} fr
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import {SellerReducer } from "./Reducers/SellerReducer"
-
+import { ProductDetailsReducer, ProductReducer, ProductsReducer } from "./Reducers/productReducers"
+import { CouponsDeleteReducer, CouponsDetailsReducer, CouponsReducer } from "./Reducers/couponReducers"
 
 const reducer =combineReducers({
     seller:SellerReducer,
-  
+    products:ProductsReducer,     //get all product
+    productDetails :ProductDetailsReducer,  // single product details
+    product:ProductReducer, 
+    coupons:CouponsReducer,     //get all coupon
+    couponDetails :CouponsDetailsReducer,  // single coupon details
+    coupondelete:CouponsDeleteReducer, 
 })
 
 

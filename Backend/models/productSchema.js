@@ -28,7 +28,10 @@ const productSchema = new mongoose.Schema({
     default: false,
     required: [true, "please enter refundable process"],
   },
-
+  order_count:{
+    type: Number,
+    default: 0,
+  },
   photos: [
     {
       type: String,
@@ -87,9 +90,9 @@ const productSchema = new mongoose.Schema({
     max: [1, "only 0 and 1 , 0 for off  1m for On"],
   },
   published: {
-    type: Number,
-    default: 0,
-    max: [1, "only 0 and 1 , 0 for off  1m for On"],
+    type: Boolean,
+    default: false,
+    required: [true, "please enter published Status"],
   },
   approved: {
     type: Number,
