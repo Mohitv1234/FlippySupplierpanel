@@ -20,12 +20,22 @@ const alluserSchema = new mongoose.Schema({
 
 
     },
+    otp_email:{
+        type:Number,
+        maxLength:[6, "please enter your otp"]
+    },
+    
     phone:{
         type:String,
         unique:true,
         maxLength:[10,"number can not be greater than 10"],
         minLength:[10, "number can not be less than 10"]
     },
+    otp_mobile:{
+        type:Number,
+        maxLength:[6, "please enter your otp"]    
+    },
+   
     password:{
         type:String,
         required:[true,"please enter your password"],

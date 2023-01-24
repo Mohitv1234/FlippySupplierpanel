@@ -1,5 +1,11 @@
 import axios from "axios"
 import {
+
+    
+    REGISTER_SELLER_REQUEST,
+    REGISTER_SELLER_SUCCESS,
+    REGISTER_SELLER_FAIL, 
+
      LOGIN_REQUEST,
     LOGIN_SUCCESS ,
     LOGIN_FAIL,
@@ -17,6 +23,28 @@ import {
 
 
 } from "../Constants/SellerConstant";
+
+
+
+
+
+// registerUser
+export const registerSeller = (sellerData) => async (dispatch) => {
+    try {
+      dispatch({ type: REGISTER_SELLER_REQUEST });
+  
+      const config = { headers: { "Content-Type": "multipart/form-data" } };
+  
+      const { data } = await axios.post(`/api/flippy/v1/seller_signup`, sellerData, config);
+  
+      dispatch({ type: REGISTER_SELLER_SUCCESS, payload: data.seller });
+    } catch (error) {
+      dispatch({
+        type: REGISTER_SELLER_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  };
 
 
 
@@ -70,7 +98,6 @@ export const loadSeller =()=> async (dispatch) =>{
             dispatch({
             type:LOAD_SELLER_SUCCESS,
             payload:data.seller,
-            sellertoken:data.sellertoken
             
         })
     
@@ -92,9 +119,7 @@ export const loadSeller =()=> async (dispatch) =>{
         await axios.get('/api/flippy/v1/seller/logout')
                 dispatch({
                 type: LOGOUT_SUCCESS             
-            })
-        
-            
+            })                
         } catch (error) {
             dispatch({
                 type:LOGOUT_FAIL,
@@ -105,11 +130,9 @@ export const loadSeller =()=> async (dispatch) =>{
         
         }
 
-     
-    
 
 
-
+        
 export const clearErrors = ()=> async (dispatch)=>{
     dispatch({
         type:CLEAR_ERRORS

@@ -194,7 +194,7 @@ export default function Sidebar() {
 
             <ul class="list-unstyled components p-0">
                  <li>        
-                    <Link to=""><i class="las la-home"></i>Dashboard</Link>
+                    <Link to="/dashboard"><i class="las la-home"></i>Dashboard</Link>
                 </li>
 
                 {/* products */}
@@ -288,7 +288,8 @@ export default function Sidebar() {
       <Routes>
         {/* Amit */}
 
-      <Route path="/" element={<Dashboard/>} />
+        <Route path="/" element={<Dashboard/>} />
+      <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/orders" element={<Order/>} />
       <Route path="/payout" element={<Payout/>} />
       <Route path="/paymentDetails" element={<PaymentViewDetails/>} />

@@ -36,8 +36,10 @@ const Login = ( ) => {
     if (isAuthenticatedSeller) { 
 
         alert.success(
-          <div style={{ color: "white" }}>{seller.role} Login Successful</div>
+          <div style={{ color: "white",fontSize:".8rem" }}>{seller.role} Login Successful</div>
         );
+        Navigate("/dashboard")
+
 
       } 
     

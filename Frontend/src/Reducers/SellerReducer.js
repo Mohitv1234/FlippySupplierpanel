@@ -1,7 +1,14 @@
 import {
+
+    REGISTER_SELLER_REQUEST,
+    REGISTER_SELLER_SUCCESS,
+    REGISTER_SELLER_FAIL,
+
+
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
+
 
 
     LOGOUT_SUCCESS,
@@ -18,12 +25,14 @@ import {
 export const SellerReducer = (state = {seller:{}}, action)=>{
    switch (action.type) {
        case LOGIN_REQUEST:
+        case   REGISTER_SELLER_REQUEST:
            case LOAD_SELLER_REQUEST:
            return{
                loading:true,
                isAuthenticatedSeller:false
            }
            case LOGIN_SUCCESS:
+           case REGISTER_SELLER_SUCCESS:
            case LOAD_SELLER_SUCCESS:
 
                return{
@@ -40,6 +49,7 @@ export const SellerReducer = (state = {seller:{}}, action)=>{
                            isAuthenticatedSeller:false
                        }
                case LOGIN_FAIL:
+                case REGISTER_SELLER_FAIL:
                    return{
                        ...state,
                        loading:false,
@@ -74,3 +84,5 @@ export const SellerReducer = (state = {seller:{}}, action)=>{
    }
  
    }
+
+

@@ -11,7 +11,7 @@ const sendSellerToken = require("../../utils/sellerJwtToken");
 
 // seller registration-------------------------------
 exports.registerSeller = catchAsyncError(async (req, res, next) => {
-  const { name, email, phone, password } = req.body;
+  const {email,otp_mobile,otp_email, phone, password } = req.body;
 const deletedSeller  =await permanentDeleteSeller.find()
 const sellerEmail = deletedSeller.find(element => element.seller.email===email)
 const sellerPhone = deletedSeller.find(element => element.seller.phone===phone)
@@ -25,10 +25,11 @@ else if(sellerPhone){
 }
 else{
    const seller = await AllUser.create({
-      name,
       email, 
       phone,
       password,
+      otp_mobile,
+      otp_email,
       role:"seller",
       avatar: {
         public_id: "kakalegayetamatar", 

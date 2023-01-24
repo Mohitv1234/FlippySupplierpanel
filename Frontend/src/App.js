@@ -3,6 +3,7 @@ import './App.css';
 import React , {useEffect} from "react"
 import Sidebar from './components/Include/Sidebar/Sidebar';
 import Login from './components/Credentials/Login/Login';
+import Home from './components/HomeMain/Home';   
 
 
 import { BrowserRouter,Routes,Route} from "react-router-dom";
@@ -35,9 +36,10 @@ useEffect(() => {
     <div className="App">
        <BrowserRouter>
        {isAuthenticatedSeller && <Sidebar/> }
-       {!isAuthenticatedSeller && <Login/> }
        <Routes>
-       <Route path="/login" element={ !isAuthenticatedSeller && <Login />} />
+       <Route path="/" element={!isAuthenticatedSeller && <Home />} />
+
+       <Route path="/login" element={<Login />} />
        <Route path="/forgotepass" element={<ForgotePass />} />
           <Route path="/verifyemail" element={<Verify />} />
           <Route path="/resetpass" element={<ResetPass />} />
